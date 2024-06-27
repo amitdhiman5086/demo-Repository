@@ -37,11 +37,11 @@ const FunctionalComponent = (probs) => {
           setSearchComment(e.target.value);
         }}
       />
-      <input
+      {/* <input
         className="mx-2 border border-gray-500 rounded-lg "
         type="text"
         placeholder="Filter"
-      />
+      /> */}
       <Link to= "/addperson" > <button className="mx-2 border border-gray-500  rounded-lg">
         Add Person
       </button></Link>
