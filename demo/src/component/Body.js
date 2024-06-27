@@ -49,7 +49,7 @@ const Body = () => {
 
   return (!filterperson) ? null : (
     <>
-      <div className="flex justify-center items-center-center ">
+      <div className="flex justify-center items-center ">
       <CommentContext.Provider value={{searchComment,setSearchComment}} >
       <FunctionalComponent
           allperson={allperson}
@@ -59,7 +59,7 @@ const Body = () => {
       </div>
 
       <div className="flex justify-center">
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center ">
           <div className="flex flex-col ">
             {filterperson.map((item) => (
               <Link key={item.id}  to={"/person/" + item.id}>

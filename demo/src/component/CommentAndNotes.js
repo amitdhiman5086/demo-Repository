@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 // import Comments from "./Comments";
 import CommentList from "./CommentList";
 import { LoadingSpinner } from "../utils/Loading";
+import NewComment from "./NewComment";
 
 const CommentAndNotes = () => {
   const [person, setPerson] = useState([]);
@@ -31,7 +32,7 @@ const CommentAndNotes = () => {
       const json = await data.json();
       // console.log(json);
       setPerson(json);
-      console.log(person.personRemarks);
+      // console.log(person.personRemarks);
     } catch (error) {
       console.error(error);
     }
@@ -42,9 +43,14 @@ const CommentAndNotes = () => {
   }, [dasId]);
 
   return person?.personRemarks?.length == 0 || person.length == 0 ? (
-    <LoadingSpinner />
+    <div className=" w-1/3">
+      <div className="flex flex-col">
+      <span className="text-center">No Comment Found</span>
+      <NewComment personId={person.id} />
+      </div>
+    </div>
   ) : (
-    <div>
+    <div className="h-auto w-1/3  flex items-center justify-center ">
       <CommentList key={person.id} info={person.personRemarks} />
     </div>
   );

@@ -85,7 +85,7 @@ const AddPerson = () => {
       .then((response) => response.text())
       .then((result) => console.log(result))
       .then(() => setIsLoading(false))
-      .then(() => nevigate("/"))
+      .then(() => window.location.reload())
       .catch((error) => console.error(error));
   };
 
